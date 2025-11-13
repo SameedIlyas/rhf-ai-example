@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { AIFormProvider } from 'react-hook-form-ai';
 import Layout from './components/Layout';
 import Home from './pages/Home';
