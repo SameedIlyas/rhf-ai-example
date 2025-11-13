@@ -18,7 +18,6 @@ function App() {
       fallbackOnError={true}
     >
       <Layout>
-        <BrowserRouter basename='/'>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/get-started" element={<GetStarted />} />
@@ -28,7 +27,6 @@ function App() {
               <Route path="/examples/field-suggestions" element={<FieldSuggestionsExample />} />
               <Route path="/examples/chrome-ai" element={<ChromeAIExample />} />
             </Routes>
-          </BrowserRouter>
       </Layout>
     </AIFormProvider>
   );
