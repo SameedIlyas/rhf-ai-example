@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { AIFormProvider } from 'react-hook-form-ai';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -18,15 +18,17 @@ function App() {
       fallbackOnError={true}
     >
       <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/get-started" element={<GetStarted />} />
-            <Route path="/examples" element={<Examples />} />
-            <Route path="/examples/basic" element={<BasicExample />} />
-            <Route path="/examples/multi-provider" element={<MultiProviderExample />} />
-            <Route path="/examples/field-suggestions" element={<FieldSuggestionsExample />} />
-            <Route path="/examples/chrome-ai" element={<ChromeAIExample />} />
-          </Routes>
+        <BrowserRouter basename='/'>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/get-started" element={<GetStarted />} />
+              <Route path="/examples" element={<Examples />} />
+              <Route path="/examples/basic" element={<BasicExample />} />
+              <Route path="/examples/multi-provider" element={<MultiProviderExample />} />
+              <Route path="/examples/field-suggestions" element={<FieldSuggestionsExample />} />
+              <Route path="/examples/chrome-ai" element={<ChromeAIExample />} />
+            </Routes>
+          </BrowserRouter>
       </Layout>
     </AIFormProvider>
   );
