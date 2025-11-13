@@ -1,19 +1,14 @@
-import { defineConfig, loadEnv } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
-export default defineConfig(({ mode }) => {
-  // Load environment variables based on mode (e.g., .env, .env.development)
-  const env = loadEnv(mode, process.cwd(), '');
-
-  return {
-    plugins: [react()],
-    server: {
-      port: 5173,
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  base: '/react-hook-form-ai/',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
     },
-    define: {
-      // Make env variables available as process.env.*
-      'process.env': env,
-    },
-  };
+  },
 });
-
